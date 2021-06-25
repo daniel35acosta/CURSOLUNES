@@ -9,6 +9,9 @@
        h1{ color:white;
        font-family: "verdana"; 
        font-size: xx-large;
+       box-shadow: 0 0 45px yellow;
+       width: 400px;
+       height: 40px;
        }
        p{
            color: green;
@@ -29,7 +32,11 @@
         h3{
             color: white;
            font-family: "Franklin Gothic Medium";
-           font-size: 15px;  
+           font-size: 15px; 
+           box-shadow: 0 0 15px yellow; 
+           width: 290px;
+           height: 20px;
+           text-align: center;
         }
 .destacados{
     color: blue;
@@ -39,6 +46,8 @@
         background-color: yellow;
         width: 370px;
         height: 35px;
+        border-radius: 0 20px 20px 0;
+        box-shadow: 0px 0px 4px white;
     }
     h4{
         border: 3px dashed;
@@ -47,16 +56,67 @@
         color:red;
     }
     img{
-        margin-left: 85px;
+        margin-left: 0px;
+        box-shadow: 0px 0px 4px white;
         }
+.contenedor{
+    max-width: 1200px;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.contenedor_tarjeta{
+  margin: 20px;  
+}
+.contenedor_tarjeta a{
+    display: inline-block;
+}
+.contenedor_tarjeta:hover figure {
+    transform: perspective(400px) rotateY(180deg);
+}
+figure{
+    width: 200px;
+    height: 250px;
+    margin: 20px;
+    transition: all ease .5s;
+    transform-style: preserve-3d;
+    transform: perspective(400px) rotateY(0deg); 
+}
+figure .adelante,
+figure .atras{
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    transition: all ease .5s;
+}
+figure .adelante{
+    display: block;
+}
+figure .atras{
+    position: absolute;
+    top: 0;
+    transform: perspective(600px) rotateY(180deg);
+
+}
     </style>
-    
+
 </head>
 <body background="batcueva.jpg">
     <h1>NOMBRE Y APELLIDO</h1>
     <h2 id="amarillo">Bruce Wayne</h2>
-         <img src="batman.jpg" alt="batman 1989">
-    <h2 id="amarillo">Edad:35 años</h2>
+    <div class="contenedor">
+        <div class="contenedor_tarjeta">
+            <a href="#">
+                <figure>
+                    <img src="batman.jpg" class="adelante">
+                    <img src="keaton1.jpg" class="atras">
+                </figure>
+            </a>
+        </div>
+    </div>
+  
+    <h2 id="amarillo"> Edad:35 Años</h2>
     <h2 id="amarillo">Domicilio:Ciudad Gotica</h2>
         <h3>Que series me gustan?</h3>
         <ul>
